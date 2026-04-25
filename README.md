@@ -1,6 +1,14 @@
 # SharpMTKClient
 
+![SharpMTKClient banner](assets/sharpmtkclient-hero.svg)
+
 > Professional C# source code project for MediaTek / MTK protocol development on Windows.
+
+[![Product Type](https://img.shields.io/badge/product-source%20code-blue)](#)
+[![Language](https://img.shields.io/badge/language-C%23-68217A)](#)
+[![Platform](https://img.shields.io/badge/platform-Windows-0078D4)](#)
+[![Protocols](https://img.shields.io/badge/protocols-LEGACY%20%7C%20XFLASH%20%7C%20XML-green)](#)
+[![Audience](https://img.shields.io/badge/audience-developers%20%7C%20researchers%20%7C%20software%20owners-purple)](#)
 
 ## Overview
 
