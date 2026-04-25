@@ -14,6 +14,18 @@ This changelog describes public documentation and product-positioning updates fo
 
 The private SharpMTKClient package has included development paths and updates around:
 
+* Patch cert workflows.
+* IMEI information read from device paths such as `nvdata` and `ld0b`.
+* IMEI repair workflow areas for selected Vivo, Xiaomi, OPPO, Infinix, Tecno, Itel and Samsung MTK paths.
+* NV item decryption.
+* Xiaomi Mi Account disable, remove and global conversion paths.
+* Payjoy remove and Payjoy unlock paths.
+* Huawei ID reset and OPPO ID reset paths.
+* OTA remove paths for OPPO, Realme, OnePlus and Xiaomi.
+* MDM remove, MDM + OTA remove, Walton Walock remove and Nothing / CMF SIM Lock / MDM remove paths.
+* Xiaomi anti-relock modem patch paths.
+* Persist patch, demo remove, restore Vbmeta and Vbmeta Patch V1 / V2 / V3 paths.
+* Fix no efuse state, fix DM corrupted and remove security plugin paths.
 * EROFS partition support paths.
 * F2FS partition support paths.
 * Raw and sparse image handling.

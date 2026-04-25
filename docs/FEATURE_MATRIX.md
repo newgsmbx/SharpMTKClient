@@ -76,7 +76,13 @@ This matrix describes major SharpMTKClient source-code areas. Availability depen
 | NV write | Device dependent |
 | NV erase | Device dependent |
 | NV item decode logic | Package dependent |
+| NV item decryption | Package dependent |
+| Read IMEI info from `nvdata` / `ld0b` | Device dependent |
 | IMEI read / repair source areas | Brand and mode dependent |
+| FlashMode IMEI repair | Brand and mode dependent |
+| Vivo / Xiaomi / OPPO IMEI repair paths | Brand and mode dependent |
+| Infinix / Tecno / Itel IMEI repair paths | Brand and mode dependent |
+| Samsung MT67xx IMEI-related key paths | Brand and mode dependent |
 | Hardware key read paths | Device dependent |
 | DXCC helper integration | Device dependent |
 | SEJ / GCPU helper integration | Device dependent |
@@ -100,6 +106,34 @@ This matrix describes major SharpMTKClient source-code areas. Availability depen
 | FRP / format workflow code paths | Device dependent |
 | Vbmeta / dm-verity patch paths | Device dependent |
 | Brand-specific patch examples | Package dependent |
+
+## Patch and Advanced Service Tabs
+
+| Feature | Status |
+| --- | --- |
+| Patch cert for selected OPPO / Xiaomi paths | Device dependent |
+| Remove Payjoy | Device dependent |
+| Payjoy remove through selected `oeminfo` paths | Device dependent |
+| Reset Huawei ID | Device dependent |
+| Reset OPPO ID | Device dependent |
+| Disable Mi Account through system / APK / hosts methods | Device dependent |
+| Mi Account remove and global conversion paths | Device dependent |
+| Mi Account remove + Convert Global V2 | Device dependent |
+| OTA Remove for OPPO / Realme / OnePlus | Device dependent |
+| Xiaomi OTA Remove | Device dependent |
+| MDM + OTA Remove | Device dependent |
+| MDM Remove | Device dependent |
+| Walton MDM / Walock Remove | Device dependent |
+| Nothing / CMF SIM Lock / MDM Remove | Device dependent |
+| Xiaomi anti-relock modem patch | Device dependent |
+| Persist Patch | Device dependent |
+| Demo Remove | Device dependent |
+| IT Admin / Network / Payjoy Unlock | Device dependent |
+| Restore Vbmeta for Security ON | Device dependent |
+| Vbmeta Patch V1 / V2 / V3 for Security OFF | Device dependent |
+| Fix no efuse state | Device dependent |
+| Fix DM corrupted | Device dependent |
+| Remove security plugin | Device dependent |
 
 ## Example Brand Workflow Areas
 

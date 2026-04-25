@@ -29,6 +29,15 @@ The public repository is a product showcase only. The full source code package i
 * Preloader
 * Scatter firmware
 * Android partition tools
+* IMEI repair source code
+* NV data tools
+* RPMB tools
+* Patch cert
+* Mi Account remove
+* OTA remove
+* MDM remove
+* Vbmeta patch
+* Payjoy remove
 * Windows MTK software
 
 ## Main Feature Areas
@@ -41,6 +50,8 @@ The public repository is a product showcase only. The full source code package i
 * EXT4, EROFS and F2FS related file-system paths.
 * NV, IMEI, RPMB and hardware key related modules.
 * SLA / DAA, Kamakiri, HeapBait and Carbonara related development paths where supported.
+* Patch cert, account reset, OTA remove, MDM remove, Payjoy remove and Vbmeta patch workflow areas where supported.
+* IMEI information read and IMEI repair workflow areas for selected brands and modes.
 * Windows C# desktop application architecture.
 * Private branding, UI customization and commercial workflow control.
 
@@ -50,7 +61,7 @@ Professional C# source code project for MediaTek MTK protocol development on Win
 
 ## Suggested About Text
 
-Developer-focused C# / .NET source code package for building private Windows MTK service software, including BROM, Preloader, DA, flash, partition, file-system, NV, RPMB and research-oriented workflow areas.
+Developer-focused C# / .NET source code package for building private Windows MTK service software, including BROM, Preloader, DA, flash, partition, file-system, NV, IMEI, RPMB, patch, account, MDM, OTA, Vbmeta and research-oriented workflow areas.
 
 ## Suggested Topics
 
@@ -64,6 +75,12 @@ Developer-focused C# / .NET source code package for building private Windows MTK
 * mtkv5
 * xflash
 * download-agent
+* imei
+* nvdata
+* rpmb
+* vbmeta
+* ota-remove
+* mdm-remove
 * windows
 
 ## Public Links

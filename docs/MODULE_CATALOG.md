@@ -68,8 +68,11 @@ This catalog describes the main source areas that may exist in the private Sharp
 * NV partition backup.
 * NV write and erase paths.
 * NV item parsing and decode logic.
+* NV item decryption paths where included.
 * LD0B / nvdata related IMEI development paths.
+* IMEI information read in supported operations.
 * IMEI read and repair workflow areas for selected modes and brands.
+* FlashMode IMEI repair paths for supported brands and chipsets.
 * Hardware key read paths.
 * DXCC, SEJ, GCPU and AES helper integration points where supported.
 
@@ -91,6 +94,22 @@ This catalog describes the main source areas that may exist in the private Sharp
 * FRP and format workflows.
 * Vbmeta / dm-verity patch workflows.
 * Brand and model-specific examples where included.
+
+## Patch and Advanced Service Modules
+
+* Patch certificate workflow modules for selected OPPO and Xiaomi paths.
+* Mi Account disable, remove and global conversion workflow areas.
+* OPPO ID reset workflow areas.
+* Huawei ID reset workflow areas.
+* Payjoy remove and Payjoy unlock workflow areas.
+* OTA remove workflow areas for OPPO, Realme, OnePlus and Xiaomi targets where supported.
+* MDM remove, MDM + OTA remove and IT Admin / Network workflow areas.
+* Walton MDM / Walock remove workflow areas.
+* Nothing / CMF SIM Lock / MDM remove workflow areas.
+* Xiaomi anti-relock modem patch workflow areas.
+* Persist patch and demo remove workflow areas.
+* Restore Vbmeta and Vbmeta Patch V1 / V2 / V3 workflow areas.
+* Fix no efuse state, fix DM corrupted and remove security plugin workflow areas.
 
 ## UI and Product Modules
 

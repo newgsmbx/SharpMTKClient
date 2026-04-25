@@ -29,6 +29,7 @@ The licensed package may include, depending on the agreement:
 * BROM, Preloader, DA and storage workflow implementation areas.
 * Flash, partition and file-system related source areas.
 * NV, IMEI, RPMB and key-related development paths where included.
+* Patch, Patch [1], account, OTA, MDM, Vbmeta and advanced service workflow areas where included.
 * Brand or model workflow examples included in the purchased package scope.
 * Documentation and compile guidance.
 * Minor updates and bug fixes during the support period.
@@ -40,6 +41,7 @@ Before purchasing, clarify:
 * Required protocol family: LEGACY, XFLASH, XML or a combination.
 * Target chipsets and brands.
 * Required operations: flash, read, erase, file management, NV, RPMB, IMEI or patch workflows.
+* Required patch workflows such as patch cert, OTA remove, MDM remove, Payjoy remove, Vbmeta patch, account reset or modem patch.
 * Whether private customization is required.
 * Whether compiled redistribution is required.
 * Support period and update expectations.
@@ -62,6 +64,7 @@ Before finalizing the package, prepare:
 * Required storage types such as EMMC, UFS or NAND.
 * Required file-system workflows such as EXT4, EROFS, F2FS or `super` partition handling.
 * Required NV, IMEI, RPMB or hardware key workflows.
+* Required account, lock, MDM, OTA, Payjoy, Vbmeta or patch workflows.
 * Expected UI language, branding and licensing model.
 * Expected delivery and support requirements.
 

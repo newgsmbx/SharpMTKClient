@@ -35,6 +35,7 @@ If your goal is to own and develop your own MTK software instead of depending on
 ## Documentation
 
 * [Feature Matrix](docs/FEATURE_MATRIX.md)
+* [Advanced Service Features](docs/ADVANCED_SERVICE_FEATURES.md)
 * [Architecture](docs/ARCHITECTURE.md)
 * [Module Catalog](docs/MODULE_CATALOG.md)
 * [Buyer Guide](docs/BUYER_GUIDE.md)
@@ -162,12 +163,36 @@ Protocol availability depends on chipset, selected DA, boot mode, security state
 * Kamakiri-style payload workflow where supported.
 * HeapBait protocol path where supported.
 * Carbonara stage authentication path where supported.
+* Patch certificate workflows for selected OPPO / Xiaomi paths where supported.
 * Bootloader unlock and relock logic.
 * Read / orange state fix paths after bootloader unlock where supported.
 * Permanent unlock development paths for supported targets.
 * FRP and format workflow code paths.
 * Vbmeta / dm-verity patch logic where supported.
 * Brand or model-specific patch workflow examples.
+
+### Patch, Patch [1] and Advanced Service Workflows
+
+The commercial package may include source areas for advanced service tabs and patch workflows such as:
+
+* IMEI information read from `nvdata`, `ld0b` and supported device paths.
+* IMEI repair workflows for selected Vivo, Xiaomi, OPPO, Infinix, Tecno, Itel and Samsung MTK targets.
+* NV item decryption and selected NV item repair logic.
+* Patch certificate workflows for selected OPPO and Xiaomi cases.
+* Payjoy remove workflows, including selected `oeminfo` paths where supported.
+* Huawei ID reset and OPPO ID reset workflows where supported.
+* Xiaomi Mi Account disable, remove and global conversion workflows using supported partition, APK, host, `cust` or `opcust` paths.
+* OTA remove workflows for OPPO, Realme, OnePlus and Xiaomi where supported.
+* MDM remove, MDM + OTA remove and IT Admin / Network / Payjoy unlock workflows where supported.
+* Walton MDM / Walock remove workflows where supported.
+* Nothing / CMF SIM Lock / MDM remove workflows where supported.
+* Xiaomi anti-relock modem patch workflows where supported.
+* Persist patch and demo remove workflows where supported.
+* Restore Vbmeta for Security ON paths where supported.
+* Vbmeta Patch V1 / V2 / V3 for Security OFF paths where supported.
+* Fix no efuse state, fix DM corrupted and remove security plugin workflows where supported.
+
+These workflows are device, firmware, boot-mode, security-state and package-scope dependent. They are intended for lawful development, authorized service and internal commercial tooling.
 
 ### Vendor and Model Workflow Examples
 
@@ -219,6 +244,7 @@ The licensed source package is intended to provide a practical development found
 * File-system access modules for selected Android partition formats.
 * NV, IMEI, RPMB, crypto and key-related development areas.
 * Brand-specific and research-oriented workflow examples where included.
+* Advanced Patch and Patch [1] service workflow source areas where included.
 * Documentation, compile guidance and support during the active support period.
 
 ## Repository Notice
