@@ -12,33 +12,188 @@
 
 ## Overview
 
-**SharpMTKClient** is a developer-focused C# / .NET source code project for building MediaTek / MTK software on Windows.
+**SharpMTKClient** is a Windows GUI source-code project written in C# by Alephgsm for MediaTek chipset devices.
 
-This repository is a public product showcase. It does not contain the commercial source code package. The full project is available through private licensing for developers, software owners, research teams and companies that want to build, customize or extend their own MTK service software.
+The project is designed for developers, researchers and software owners who want a private MTK service software foundation instead of a closed binary. The full commercial source code is provided privately to licensed buyers only.
 
-The project focuses on MTK protocol workflows including device initialization, BROM / Preloader communication, Download Agent handling, flash operations, partition management, file-system access, NV / IMEI logic, RPMB paths and advanced research-oriented modules.
+SharpMTKClient supports MTK protocol workflows including BROM / Preloader communication, Download Agent handling, LEGACY, XFLASH and MTK V6 XML operations, firmware flashing, partition management, file-system access, NV / IMEI logic, RPMB paths and advanced patch/service modules.
 
-Official product page:
+USB communication is based on Windows APIs. It has no UsbDk dependency; libusb is used only for selected `ControlTransfer` paths.
 
-<https://alephgsm.com/2022/01/13/csharp-mtkclient/>
+Product page: <https://alephgsm.com/2022/01/13/csharp-mtkclient/>
 
-Contact:
+Contact: <https://t.me/GsmCoder>
 
-<https://t.me/GsmCoder>
+## Core Protocol Families
 
-## Important Positioning
+| Protocol | Purpose |
+| --- | --- |
+| **LEGACY** | Classic DA-based MediaTek workflow. |
+| **XFLASH** | Modern DA workflow with native partition-oriented operations. |
+| **XML** | MTK V6 / XML command flow for supported firmware packages and modes. |
 
-SharpMTKClient is **not** a simple compiled end-user repair tool.
+Protocol availability depends on chipset, selected DA, boot mode, security state and target operation.
 
-It is a **source code product** for:
+## Main Features
 
-* C# / .NET developers who need a MediaTek protocol codebase.
-* Software owners building a private MTK service product.
-* Research teams studying MTK protocol behavior.
-* Companies that need internal Windows tooling around MTK workflows.
-* Developers who want branding, customization, licensing and private workflow control.
+* MediaTek port detection by VID / PID and USB plug / unplug events.
+* Device type support for LEGACY, XFLASH and XML workflows.
+* UFS, NAND and EMMC support where DA and protocol allow it.
+* Auto SLA / DAA handling paths where supported.
+* Preloader crash / boot preparation paths where supported.
+* MTKV5 and MTKV6 firmware flashing through scatter and `flash.xml`.
+* Native XML firmware write paths: download, firmware upgrade and download-only.
+* Flash by partition name.
+* Raw firmware flash and raw / sparse image handling.
+* Read Oxygen Forensics Detective dump paths where supported.
+* GPT read, flash and rebuild.
+* Dump, backup, write and erase partitions.
+* Read and flash preloader.
+* Safe format, manual format and FRP erase workflows.
+* NV partition backup, write and erase paths.
+* Bootloader unlock / relock and permanent unlock paths where supported.
+* Fix read / orange state after bootloader unlock.
+* RPMB read / write / erase and RPMB key read paths where supported.
+* Hardware key read paths.
+* DA / Preloader parser.
+* Android `build.prop` extraction.
+* File-system explorer for EXT4, EROFS and F2FS partitions.
+* Native C# EXT4 stream reader / writer paths.
+* Logical partition and `super.img` browsing paths.
+* File browse, extract, rename, replace, delete and copy-to-local workflows where supported.
+* Patch cert, account, MDM, OTA, Payjoy, Vbmeta and advanced patch workflows where supported.
 
-If your goal is to own and develop your own MTK software instead of depending on a closed binary, this project is designed for that use case.
+## Advanced Patch / Service Features
+
+* Patch cert.
+* IMEI Repair for selected Vivo, Xiaomi, OPPO, Infinix, Tecno and Itel targets.
+* Read IMEI information from `nvdata` and `ld0b`.
+* Decrypt NV items.
+* FlashMode IMEI repair for universal and Samsung MT67xx paths where supported.
+* Remove Payjoy.
+* Reset Huawei ID and OPPO ID.
+* Disable Mi Account through system, APK and hosts methods where supported.
+* Mi Account + Global using `cust` / `opcust` paths where supported.
+* Mi Account Remove + Convert Global V2.
+* OTA Remove for OPPO, Realme, OnePlus and Xiaomi.
+* MDM + OTA Remove.
+* MDM / Walock Remove for Walton.
+* SIM Lock / MDM Remove for Nothing / CMF.
+* Xiaomi anti-relock modem patch.
+* Persist Patch and Demo Remove.
+* Payjoy Remove through selected `oeminfo` paths.
+* IT Admin / Network / Payjoy Unlock.
+* Restore Vbmeta for Security ON paths.
+* Vbmeta Patch V1 / V2 / V3 for Security OFF paths.
+* Fix no efuse state, fix DM corrupted and remove security plugin.
+
+## Security / Research Paths
+
+* SLA / DAA handling paths where supported.
+* Kamakiri workflow paths.
+* HeapBait workflow paths.
+* Carbonara workflow paths.
+* New SLA key handling for selected Motorola, Xiaomi and AOT paths.
+* Infinix DA + exploit paths for selected MT6789, MT6835, MT6855, MT6878, MT6886, MT6893, MT6895, MT6896, MT6897, MT6983, MT6985, MT6989 and MT6993 targets.
+
+## Public Update Highlights
+
+### 2026.02.21
+
+* Added patch cert.
+* Added IMEI Repair for selected Vivo, Xiaomi, OPPO, Infinix, Tecno and Itel targets.
+* Added Payjoy, Huawei ID, OPPO ID, no efuse state, DM corrupted and security plugin workflows.
+* Added OTA, MDM, Walock, SIM Lock / MDM, modem patch, persist patch, demo remove and Vbmeta patch workflows.
+* Updated HeapBait protocol and optimized protocol.
+
+### 2026.02.13
+
+* Added read IMEI info from device in all operations from `nvdata` and `ld0b`.
+* Added decrypt NV items.
+* Added IMEI repair for IMEI1 / IMEI2 in FlashMode.
+* Added Mi Account disable paths.
+* Added permanent bootloader unlock.
+
+### 2026.02.10
+
+* Added HeapBait exploit workflow.
+* Added selected Infinix chipset support paths.
+* Added new keys for Motorola, Xiaomi and AOT paths.
+* Optimized and fixed XML protocol issues.
+
+![SharpMTKClient 2026 update screenshot](https://alephgsm.com/wp-content/uploads/2022/01/Screenshot-2026-02-10-174646.png)
+
+### 2025.12.25
+
+* Added partition explorer for EROFS, F2FS and EXT4FS.
+* Updated EROFS algorithm.
+* Added rename, replace, delete and copy-to-local file workflows inside readable partitions.
+* Updated protocol areas.
+
+Video: <https://youtu.be/a5HE8kyOKfU?si=aC3T7rvYiMM2NAQN>
+
+### 2025.10.27
+
+* Added EROFS partitions.
+* Added F2FS partitions.
+* Added raw and sparse image handling from device and file.
+* Optimized and fixed protocol issues.
+
+### 2025.09.23
+
+* Added native C# EXT4 stream reader and writer.
+* Added logical partition and `super.img` browsing.
+* Added file and directory extraction from EXT4 partitions.
+* Added replace, delete and add file workflows for EXT4.
+* Added `build.prop` parser from system or super partition.
+
+Video: <https://alephgsm.com/wp-content/uploads/2022/01/VID_20250923_055602_985.mp4>
+
+### 2025.06.07
+
+* Updated RPMB erase and write paths.
+* Added vendor selection tab.
+* Added selected Samsung, Motorola, Infinix, Honor, Vivo, Redmi and TCL workflow examples.
+* Updated MTKV6 commands.
+
+Video: <https://youtu.be/wMd3SnQVEt8>
+
+### 2025.04.12
+
+* Added read and write RPMB for V6 devices.
+* Added native XML firmware write paths.
+* Added flash partition by name for XML and XFLASH.
+* Updated DA2 patch, CPU list and MTKV6 protocol.
+
+Video: <https://www.youtube.com/watch?v=7Nz4s8QR5SM>
+
+### 2025.04.06
+
+* Added native MTKV6 firmware flash through `flash.xml` and scatter.
+* Updated legacy protocol.
+* Fixed and optimized protocol areas.
+
+## Screenshots From Code
+
+![SharpMTKClient code screenshot 1](https://alephgsm.com/wp-content/uploads/2022/01/2-1.jpg)
+
+![SharpMTKClient code screenshot 2](https://alephgsm.com/wp-content/uploads/2022/01/4.jpg)
+
+![SharpMTKClient code screenshot 3](https://alephgsm.com/wp-content/uploads/2022/01/5.jpg)
+
+![SharpMTKClient code screenshot 4](https://alephgsm.com/wp-content/uploads/2022/01/6.jpg)
+
+## Screenshots From Interface
+
+![SharpMTKClient interface screenshot 1](https://alephgsm.com/wp-content/uploads/2022/01/Screenshot-2025-04-12-072352.png)
+
+![SharpMTKClient interface screenshot 2](https://alephgsm.com/wp-content/uploads/2022/01/Screenshot-2025-04-12-072654.png)
+
+![SharpMTKClient interface screenshot 3](https://alephgsm.com/wp-content/uploads/2022/01/Screenshot-2025-04-12-072713.png)
+
+![SharpMTKClient interface screenshot 4](https://alephgsm.com/wp-content/uploads/2022/01/Screenshot-2025-04-12-072727.png)
+
+![SharpMTKClient interface screenshot 5](https://alephgsm.com/wp-content/uploads/2022/01/Screenshot-2025-04-12-072739.png)
 
 ## Documentation
 
@@ -47,213 +202,7 @@ If your goal is to own and develop your own MTK software instead of depending on
 * [Architecture](docs/ARCHITECTURE.md)
 * [Module Catalog](docs/MODULE_CATALOG.md)
 * [Buyer Guide](docs/BUYER_GUIDE.md)
-* [Compile and Debug Guide](docs/COMPILE_AND_DEBUG_GUIDE.md)
 * [Support Policy](docs/SUPPORT_POLICY.md)
-* [Media Kit](docs/MEDIA_KIT.md)
-* [FAQ](docs/FAQ.md)
-* [Changelog](docs/CHANGELOG.md)
-* [Links](docs/LINKS.md)
-
-## Public Repository Status
-
-The previous public skeleton project has been removed from this repository.
-
-This repository now contains only public-facing product documentation for SharpMTKClient. It is intended to explain the commercial source-code package, supported workflow areas, licensing position, buyer expectations and contact channels.
-
-No private protocol code, loaders, payloads, authorization material, customer files or commercial implementation files are included in this public repository.
-
-## Core Protocol Families
-
-SharpMTKClient includes implementation paths for the major MediaTek workflow families:
-
-| Protocol | Purpose |
-| --- | --- |
-| **LEGACY** | Classic MediaTek DA-based flow used on supported older and legacy devices. |
-| **XFLASH** | Modern DA workflow with native partition-oriented operations and faster flash paths where supported. |
-| **XML** | MTK V6 / XML command flow used by supported firmware packages and device modes. |
-
-Protocol availability depends on chipset, selected DA, boot mode, security state and target operation.
-
-## Main Feature Areas
-
-### Device Connection and Initialization
-
-* MediaTek port detection by VID / PID and USB plug / unplug events.
-* Auto-detection of supported MTK boot ports without busy waiting loops.
-* BROM and Preloader communication workflow.
-* Handshake and device information reading.
-* Hardware code, hardware sub-code, hardware version, software version and security flag parsing.
-* MEID / SOCID read paths where available.
-* Watchdog handling where supported.
-* DA selection logic.
-* Stage-1 and Stage-2 DA upload flow.
-* EMI receiving and sending workflow.
-* Storage information detection for EMMC, UFS, NAND, NOR and SDMMC paths where supported.
-* Windows native USB communication paths based on Windows APIs, with optional libusb usage for selected authorization paths.
-* Logging hooks for connection state, timing, operation status and device capability reporting.
-
-### Download Agent and Stage Flow
-
-* DA parser and loader metadata handling.
-* Preloader parser and read / write logic.
-* DA stage upload workflow.
-* DA extension loading paths where available.
-* Runtime configuration of flash type, page size, flash size and read size.
-* Stage authentication related development paths where supported.
-* Error handling around DA boot, reconnection and protocol mode changes.
-* Connection migration handling when a target switches from BROM to DA or protocol-specific mode.
-
-### Firmware and Flash Operations
-
-* Scatter firmware workflow.
-* XML firmware workflow for supported MTK V6 packages.
-* Native XFLASH / XML flash paths.
-* Flash by partition name.
-* Raw address-based read and write support.
-* Raw and sparse image handling from device or file.
-* Preloader read and write operations.
-* GPT read, flash and rebuild paths.
-* Flash GPT and partition table repair workflows where supported.
-* Download-only and firmware-upgrade style flows depending on protocol support.
-* Progress reporting and logging integration.
-* FlashToolLib-style integration paths where included by package scope.
-
-### Partition and Storage Management
-
-* GPT / partition table reading.
-* Partition list parsing and display.
-* Read selected partitions.
-* Write selected partitions.
-* Erase selected partitions.
-* Full flash read path where supported.
-* Partition lookup by name.
-* Sector and size calculation helpers.
-* Safe format and manual format workflows.
-* FRP erase workflows.
-* Support paths for EMMC, UFS and NAND targets where available.
-* Partition size, sector, region and storage target helpers for protocol operations.
-
-### File Management and File-System Access
-
-* Detect supported Android partitions.
-* EXT4 stream read paths.
-* EXT4 browse, extract, replace, delete and add file workflows where supported.
-* Logical partition / `super` partition metadata handling.
-* Dynamic partition browsing.
-* EROFS detection and read paths where implemented.
-* F2FS detection and read paths where implemented.
-* Android `build.prop` extraction logic from supported partitions.
-* File and directory extraction flows.
-* File Management UI paths for browsing supported partitions in a Windows desktop workflow.
-
-### NV, IMEI and Key-Related Modules
-
-* NV partition backup, write and erase paths.
-* NV item decode logic.
-* LD0B / nvdata related IMEI development paths where supported.
-* IMEI read and repair workflow source areas for selected modes and brands.
-* Hardware key read paths where supported.
-* DXCC / crypto-related integration points where available.
-* AES and device crypto helper modules used by selected workflows.
-* Brand or storage-specific NV workflow examples where included in the licensed package.
-
-### RPMB Development Paths
-
-* RPMB read path where supported.
-* RPMB write path where supported.
-* RPMB erase path where supported.
-* RPMB key read path where supported by mode and target.
-* Protocol-specific RPMB integration points.
-
-### Security, Patch and Research-Oriented Paths
-
-* SLA / DAA related paths where supported.
-* Kamakiri-style payload workflow where supported.
-* HeapBait protocol path where supported.
-* Carbonara stage authentication path where supported.
-* Patch certificate workflows for selected OPPO / Xiaomi paths where supported.
-* Bootloader unlock and relock logic.
-* Read / orange state fix paths after bootloader unlock where supported.
-* Permanent unlock development paths for supported targets.
-* FRP and format workflow code paths.
-* Vbmeta / dm-verity patch logic where supported.
-* Brand or model-specific patch workflow examples.
-
-### Patch, Patch [1] and Advanced Service Workflows
-
-The commercial package may include source areas for advanced service tabs and patch workflows such as:
-
-* IMEI information read from `nvdata`, `ld0b` and supported device paths.
-* IMEI repair workflows for selected Vivo, Xiaomi, OPPO, Infinix, Tecno, Itel and Samsung MTK targets.
-* NV item decryption and selected NV item repair logic.
-* Patch certificate workflows for selected OPPO and Xiaomi cases.
-* Payjoy remove workflows, including selected `oeminfo` paths where supported.
-* Huawei ID reset and OPPO ID reset workflows where supported.
-* Xiaomi Mi Account disable, remove and global conversion workflows using supported partition, APK, host, `cust` or `opcust` paths.
-* OTA remove workflows for OPPO, Realme, OnePlus and Xiaomi where supported.
-* MDM remove, MDM + OTA remove and IT Admin / Network / Payjoy unlock workflows where supported.
-* Walton MDM / Walock remove workflows where supported.
-* Nothing / CMF SIM Lock / MDM remove workflows where supported.
-* Xiaomi anti-relock modem patch workflows where supported.
-* Persist patch and demo remove workflows where supported.
-* Restore Vbmeta for Security ON paths where supported.
-* Vbmeta Patch V1 / V2 / V3 for Security OFF paths where supported.
-* Fix no efuse state, fix DM corrupted and remove security plugin workflows where supported.
-
-These workflows are device, firmware, boot-mode, security-state and package-scope dependent. They are intended for lawful development, authorized service and internal commercial tooling.
-
-### Vendor and Model Workflow Examples
-
-Package scope may include workflow examples or support paths for selected devices and brands such as:
-
-* Samsung MTK service workflows for supported modern models.
-* Motorola MTKV5 and MTKV6 workflows for supported targets.
-* Infinix MTKV5 and MTKV6 workflows.
-* Honor, Vivo, Redmi and TCL examples where supported.
-* Model-specific authorization, DA selection, partition, NV, RPMB or patch workflows depending on agreement scope.
-
-Support for a brand or model depends on chipset, firmware, boot mode, security state, DA compatibility and target operation.
-
-## Developer Value
-
-SharpMTKClient is useful when you need more than a ready-made executable. The commercial package is intended to provide a foundation that can be studied, modified and integrated into your own business or research workflow.
-
-Developers can use it to build:
-
-* A branded MTK service software product.
-* A private firmware flashing application.
-* An internal device maintenance system.
-* A research tool for MTK protocol analysis.
-* A model-specific service workflow.
-* A Windows C# application with custom UI and licensing.
-* A commercial product based on private workflow requirements.
-
-## Architecture Highlights
-
-* C# / .NET Windows desktop codebase.
-* WinForms-oriented GUI structure.
-* Protocol-oriented module organization.
-* Separate paths for LEGACY, XFLASH and XML workflows.
-* DA parser and stage upload implementation.
-* Native flash and partition command paths.
-* MountCore-style file-system reader modules.
-* File Management UI integration.
-* Configurable UI and workflow logic.
-* Suitable for private branding and commercial customization.
-
-## Commercial Package Scope
-
-The licensed source package is intended to provide a practical development foundation, not only a feature list. Depending on the agreement, the package can include:
-
-* Core C# project structure and Windows desktop UI.
-* Protocol modules for selected MTK boot and flash workflows.
-* Download Agent parser and stage flow implementation.
-* Partition, storage and firmware operation modules.
-* File-system access modules for selected Android partition formats.
-* NV, IMEI, RPMB, crypto and key-related development areas.
-* Brand-specific and research-oriented workflow examples where included.
-* Advanced Patch and Patch [1] service workflow source areas where included.
-* Documentation, compile guidance and support during the active support period.
 
 ## Repository Notice
 
@@ -278,11 +227,7 @@ It does not include:
 
 The full SharpMTKClient source code is available by private licensing.
 
-Default commercial usage rules are described in [LICENSE_TERMS.md](LICENSE_TERMS.md).
-
-In short: licensed buyers may use the source code only in their own private/internal/commercial project. They may not resell it, exchange it with other teams, publish it for free, gift it to others, upload it publicly, or share it with third parties.
-
-Support terms are described in [docs/SUPPORT_POLICY.md](docs/SUPPORT_POLICY.md). One year of minor updates and bug-fix support is included for licensed buyers by default, unless a separate written agreement says otherwise.
+Commercial usage rules are described in [LICENSE_TERMS.md](LICENSE_TERMS.md).
 
 For pricing, licensing terms, technical questions or purchase requests, contact:
 

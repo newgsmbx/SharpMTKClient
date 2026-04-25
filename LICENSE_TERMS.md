@@ -1,63 +1,118 @@
-# SharpMTKClient Commercial Source License Terms
+# SharpMTKClient Commercial License Terms
 
-This document describes the default commercial licensing position for the private SharpMTKClient source code package.
+These terms describe the default usage rules for the commercial SharpMTKClient source code package.
 
-The public GitHub repository is a product showcase and documentation repository only. It does not grant access to, ownership of, or redistribution rights for the private source code package.
+This public GitHub repository is only a product showcase. The full source code is provided privately to licensed buyers only.
 
-## Licensed Use
+All rights are reserved by **Alephgsm** / **Alephgsm.com** unless a written agreement says otherwise.
 
-Licensed buyers may use the private SharpMTKClient source code to build, modify, brand and operate their own private, internal or commercial MTK service software.
+## 1. Personal / Internal Project Use Only
 
-Permitted use includes:
+The licensed developer or company may use the SharpMTKClient source code only inside their own private, internal or commercial software project.
 
-* Building a private Windows C# MTK service application.
-* Customizing the user interface, workflow, branding and licensing system.
-* Integrating the source code into an internal company tool.
-* Extending supported device, brand, protocol or firmware workflows.
-* Using the code for lawful research, maintenance and authorized service scenarios.
+The license allows the buyer to study, modify, integrate and customize the source code for their own product or internal workflow.
 
-## Restrictions
+## 2. No Resale
 
-Licensed buyers may not:
+The buyer is not allowed to sell, resell, sublicense or transfer the SharpMTKClient source code to another person, developer, team, company or customer.
 
-* Resell the source code package.
-* Publish the source code publicly.
-* Share the source code with third parties.
-* Upload the source code to public repositories, forums, groups or file-sharing services.
-* Exchange, gift, leak or transfer the source code to another team or person.
-* Sell the source code as a competing source package.
-* Remove ownership, copyright, author or license notices from licensed material.
+This restriction applies to:
 
-Compiled products may be distributed only according to the written agreement attached to the purchase.
+- The original source code package.
+- Modified versions of the source code.
+- Partial source code copies.
+- Extracted modules.
+- Private forks.
+- Repackaged versions.
 
-## Ownership
+## 3. No Free Publication
 
-All private source code, protocol implementation, payload integration, documentation and related project material remain the property of the original author or rights holder unless a separate written agreement says otherwise.
+The buyer is not allowed to publish the SharpMTKClient source code for free in any public or private place.
 
-A purchase grants usage rights. It does not transfer copyright or full ownership of the source package.
+This includes, but is not limited to:
 
-## Updates and Support
+- GitHub.
+- GitLab.
+- Bitbucket.
+- Forums.
+- Telegram groups or channels.
+- Discord servers.
+- File-sharing websites.
+- Cloud storage links.
+- Source code marketplaces.
 
-Default support terms are described in [docs/SUPPORT_POLICY.md](docs/SUPPORT_POLICY.md).
+## 4. No Gift / Sharing With Others
 
-Unless a separate written agreement says otherwise, licensed buyers receive one year of minor updates and bug-fix support for the purchased package.
+The buyer is not allowed to give, gift, share, forward or donate the SharpMTKClient source code to any other person or organization.
 
-Major new protocol modules, brand-specific modules, private loaders, payloads, server-side systems or custom development work may require a separate agreement.
+The license is for the original buyer only, unless a written agreement explicitly allows team or company access.
 
-## Confidentiality
+## 5. No Exchange / Trade With Other Teams
 
-The private source code package may contain sensitive implementation details, protocol research, device handling logic and commercial workflow design.
+The buyer is not allowed to exchange, trade, swap or barter the SharpMTKClient source code with other developers, teams, companies, groups or source-code owners.
 
-Licensed buyers must keep the package private and protect it from unauthorized access.
+This restriction applies even if the other party offers another source code, tool, service, loader, account, API, exploit, device file or any other digital product in return.
 
-## Compliance
+Source-code exchange is treated the same as unauthorized sharing and is not permitted.
 
-SharpMTKClient is intended for lawful development, research, maintenance and authorized service workflows.
+## 6. No Public Forks or Mirrors
 
-The buyer is responsible for complying with local laws, device ownership rules, customer authorization requirements, data protection rules and platform restrictions.
+The buyer is not allowed to create public forks, public mirrors or public backup repositories containing the commercial source code.
 
-## Contact
+Private backup is allowed only for the buyer's own secure internal use.
 
-For licensing, purchase, renewal, support or custom agreement requests:
+## 7. Compiled Product Use
 
-<https://t.me/GsmCoder>
+The buyer may use the source code as a base for their own compiled software product, subject to the purchased license agreement.
+
+However, the buyer must not distribute the SharpMTKClient commercial source code itself with the compiled product unless written permission is provided.
+
+## 8. Team / Company Access
+
+If the source code is purchased for a company or team, access must be limited to authorized developers working on that same licensed project.
+
+The company or team must not share the source code with external contractors, customers, partners or third parties without written permission.
+
+## 9. Prohibited Actions
+
+The buyer must not:
+
+- Sell the source code.
+- Resell the source code.
+- Exchange, trade, swap or barter the source code with another team or developer.
+- Publish the source code for free.
+- Gift the source code to another person.
+- Upload the source code to public repositories.
+- Share the source code in groups, forums or channels.
+- Extract modules and sell them separately.
+- Remove ownership notices and present the source code package as their own original commercial source package.
+
+## 10. Allowed Actions
+
+The buyer may:
+
+- Use the source code in their own private project.
+- Study and modify the implementation.
+- Customize the UI and workflows.
+- Add private features.
+- Integrate licensing or backend systems.
+- Build a compiled product based on the licensed project.
+- Keep private backups for their own internal use.
+
+## 11. Ownership
+
+SharpMTKClient remains a commercial source code product owned by **Alephgsm** / **Alephgsm.com**.
+
+Purchasing a license gives the buyer usage rights according to the license agreement. It does not transfer ownership of the original source code product.
+
+All ownership rights, product rights, branding rights, documentation rights and commercial distribution rights are reserved by Alephgsm / Alephgsm.com unless explicitly granted in writing.
+
+## 12. Contact
+
+For licensing, team access, custom permission or commercial questions, contact:
+
+https://t.me/GsmCoder
+
+Product page:
+
+https://alephgsm.com/2022/01/13/csharp-mtkclient/
