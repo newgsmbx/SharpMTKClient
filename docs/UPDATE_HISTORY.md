@@ -123,7 +123,7 @@ The public product page was created on **2022.01.13**. Early entries are summari
 ## 2026.04.26
 
 * Synced and improved key protocol handling across recent device workflows.
-* Added basic SSR crypto integration with optional Universal Config enablement and manual `ssr_base` entry.
+* Added basic SSR crypto integration with optional Universal Config enablement and manual `ssr_base` entry; chipset configuration does not include `ssr_base` addresses yet, so users must enter the address manually.
 * Added SSR key generation paths to Read Keys for RPMB, RPMB2, FDE and Motorola keys where supported.
 * Updated XML and XFLASH response handling, including DA log message processing and stricter command-end error reporting.
 * Reworked DA2 patching logic toward string-based function discovery for newer MTK DA2 payloads.
