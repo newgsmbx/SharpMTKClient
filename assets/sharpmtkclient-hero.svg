@@ -20,12 +20,12 @@
     </filter>
     <style>
       .font { font-family: Inter, Segoe UI, Roboto, Arial, sans-serif; }
-      .eyebrow { font-size: 22px; font-weight: 700; letter-spacing: 4px; fill: #7DD3FC; }
-      .title { font-size: 82px; font-weight: 850; letter-spacing: -2.8px; fill: #F8FAFC; }
-      .subtitle { font-size: 28px; font-weight: 500; fill: #CBD5E1; }
+      .eyebrow { font-size: 21px; font-weight: 700; letter-spacing: 4px; fill: #7DD3FC; }
+      .title { font-size: 76px; font-weight: 850; letter-spacing: -2.4px; fill: #F8FAFC; }
+      .subtitle { font-size: 26px; font-weight: 500; fill: #CBD5E1; }
       .chip { font-size: 19px; font-weight: 700; fill: #E2E8F0; }
-      .mono { font-family: Consolas, Menlo, Monaco, monospace; font-size: 18px; font-weight: 700; fill: #BAE6FD; }
-      .muted { font-size: 18px; font-weight: 600; fill: #94A3B8; }
+      .mono { font-family: Consolas, Menlo, Monaco, monospace; font-size: 16px; font-weight: 700; fill: #BAE6FD; }
+      .muted { font-size: 16px; font-weight: 600; fill: #94A3B8; }
     </style>
   </defs>
 
@@ -48,13 +48,13 @@
     <rect x="54" y="54" width="1168" height="312" rx="30" fill="#0B1220" fill-opacity="0.62" stroke="#1E293B"/>
   </g>
 
-  <g transform="translate(88 105)">
+  <g transform="translate(88 108)">
     <text class="font eyebrow" x="0" y="0">MEDIATEK PROTOCOL SOURCE CODE</text>
-    <text class="font title" x="0" y="86">SharpMTKClient</text>
-    <text class="font subtitle" x="2" y="132">Professional C# / .NET source code for MTK service software on Windows</text>
+    <text class="font title" x="0" y="78">SharpMTKClient</text>
+    <text class="font subtitle" x="2" y="124">C# / .NET source code for MTK service software</text>
   </g>
 
-  <g transform="translate(90 287)">
+  <g transform="translate(90 300)">
     <rect width="104" height="42" rx="21" fill="#0F172A" stroke="#334155"/>
     <text class="font chip" x="28" y="27">BROM</text>
 
@@ -80,10 +80,10 @@
     <text class="font chip" x="879" y="27">Patch</text>
   </g>
 
-  <g transform="translate(850 118)">
-    <rect width="280" height="126" rx="24" fill="#020617" fill-opacity="0.72" stroke="#1E293B"/>
-    <text class="font muted" x="28" y="38">protocol families</text>
-    <text class="font mono" x="28" y="74">LEGACY | XFLASH | XML</text>
-    <text class="font muted" x="28" y="106">Windows native workflow</text>
+  <g transform="translate(888 92)">
+    <rect width="292" height="112" rx="22" fill="#020617" fill-opacity="0.74" stroke="#1E293B"/>
+    <text class="font muted" x="26" y="36">protocol families</text>
+    <text class="font mono" x="26" y="68">LEGACY | XFLASH | XML</text>
+    <text class="font muted" x="26" y="96">Windows native workflow</text>
   </g>
 </svg>
