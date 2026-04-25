@@ -1,6 +1,6 @@
 # SharpMTKClient
 
-![SharpMTKClient banner](assets/sharpmtkclient-hero.svg)
+![SharpMTKClient banner](assets/sharpmtkclient-hero-v2.svg)
 
 > Professional C# source code project for MediaTek / MTK protocol development on Windows.
 
