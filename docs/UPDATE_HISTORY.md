@@ -122,7 +122,7 @@ The public product page was created on **2022.01.13**. Early entries are summari
 
 ## 2026.04.26
 
-* Synced key protocol updates from recent upstream `mtkclient` changes.
+* Synced and improved key protocol handling across recent device workflows.
 * Added basic SSR crypto integration with optional Universal Config enablement and manual `ssr_base` entry.
 * Added SSR key generation paths to Read Keys for RPMB, RPMB2, FDE and Motorola keys where supported.
 * Updated XML and XFLASH response handling, including DA log message processing and stricter command-end error reporting.
