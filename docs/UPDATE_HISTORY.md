@@ -119,3 +119,17 @@ The public product page was created on **2022.01.13**. Early entries are summari
 * Added Mi Account Remove + Convert Global V2.
 * Updated HeapBait protocol.
 * Optimized protocol.
+
+## 2026.04.26
+
+* Synced key protocol updates from recent upstream `mtkclient` changes.
+* Added basic SSR crypto integration with optional Universal Config enablement and manual `ssr_base` entry.
+* Added SSR key generation paths to Read Keys for RPMB, RPMB2, FDE and Motorola keys where supported.
+* Updated XML and XFLASH response handling, including DA log message processing and stricter command-end error reporting.
+* Reworked DA2 patching logic toward string-based function discovery for newer MTK DA2 payloads.
+* Added Motorola / lamu SLA handling and improved SLA / DL forbidden error reporting.
+* Updated MTK chip configuration data, including MT6880 / MT6890 modem, MT6878, MT6583 and selected legacy targets.
+* Improved SEJ V3 hardware-code coverage and renamed updated HACC security-init register mappings.
+* Improved HeapBait pointer-auth handling and ARM / AArch64 helper detection.
+* Added safer GPT and partition-name handling to prevent null-name lookup failures.
+* Added runtime log-channel selection support for UART, USB and combined DA logging paths.
