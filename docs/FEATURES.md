@@ -1,67 +1,163 @@
 # Features
 
-This document keeps the main SharpMTKClient feature list outside the README so the repository front page stays focused.
+This document is the canonical SharpMTKClient feature overview. It combines the main feature list, feature matrix and advanced service workflow areas so the repository has one primary source for product capabilities.
 
-Feature availability depends on chipset, selected DA, boot mode, firmware package, security state and licensed package scope.
+Feature availability depends on chipset, selected DA, boot mode, firmware package, security state, licensed package scope and operation requirements. Support for any specific model must be confirmed before purchase.
 
-## Main Features
+## Protocol Families
 
-* MediaTek port detection by VID / PID and USB plug / unplug events.
-* Device type support for LEGACY, XFLASH and XML workflows.
-* UFS, NAND and EMMC support where DA and protocol allow it.
-* Auto SLA / DAA handling paths where supported.
-* Preloader crash / boot preparation paths where supported.
-* MTKV5 and MTKV6 firmware flashing through scatter and `flash.xml`.
-* Native XML firmware write paths: download, firmware upgrade and download-only.
-* Flash by partition name.
-* Raw firmware flash and raw / sparse image handling.
-* Read Oxygen Forensics Detective dump paths where supported.
-* GPT read, flash and rebuild.
-* Dump, backup, write and erase partitions.
-* Read and flash preloader.
-* Safe format, manual format and FRP erase workflows.
-* NV partition backup, write and erase paths.
-* Bootloader unlock / relock and permanent unlock paths where supported.
-* Fix read / orange state after bootloader unlock.
-* RPMB read / write / erase and RPMB key read paths where supported.
-* Hardware key read paths.
-* DA / Preloader parser.
-* Android `build.prop` extraction.
-* File-system explorer for EXT4, EROFS and F2FS partitions.
-* Native C# EXT4 stream reader / writer paths.
-* Logical partition and `super.img` browsing paths.
-* File browse, extract, rename, replace, delete and copy-to-local workflows where supported.
-* Patch cert, account, MDM, OTA, Payjoy, Vbmeta and advanced patch workflows where supported.
+| Area | Description |
+| --- | --- |
+| LEGACY | Classic DA-based MediaTek protocol flow for supported legacy devices. |
+| XFLASH | Modern DA workflow with native partition operations and faster flash paths where supported. |
+| XML | MTK V6 / XML command workflow for supported firmware packages and device modes. |
 
-## Advanced Patch / Service Features
+## Device and Boot Flow
 
-* Patch cert.
-* IMEI Repair for selected Vivo, Xiaomi, OPPO, Infinix, Tecno and Itel targets.
-* Read IMEI information from `nvdata` and `ld0b`.
-* Decrypt NV items.
-* FlashMode IMEI repair for universal and Samsung MT67xx paths where supported.
-* Remove Payjoy.
-* Reset Huawei ID and OPPO ID.
-* Disable Mi Account through system, APK and hosts methods where supported.
-* Mi Account + Global using `cust` / `opcust` paths where supported.
-* Mi Account Remove + Convert Global V2.
-* OTA Remove for OPPO, Realme, OnePlus and Xiaomi.
-* MDM + OTA Remove.
-* MDM / Walock Remove for Walton.
-* SIM Lock / MDM Remove for Nothing / CMF.
-* Xiaomi anti-relock modem patch.
-* Persist Patch and Demo Remove.
-* Payjoy Remove through selected `oeminfo` paths.
-* IT Admin / Network / Payjoy Unlock.
-* Restore Vbmeta for Security ON paths.
-* Vbmeta Patch V1 / V2 / V3 for Security OFF paths.
-* Fix no efuse state, fix DM corrupted and remove security plugin.
+| Feature | Status |
+| --- | --- |
+| VID / PID MediaTek port detection | Included where supported |
+| USB plug / unplug event handling | Included where supported |
+| BROM service detection and handshake | Included where supported |
+| Preloader communication | Included where supported |
+| Hardware code, sub-code and version parsing | Included where supported |
+| Security flag parsing | Included where supported |
+| MEID / SOCID reading | Device dependent |
+| Watchdog handling | Device dependent |
+| DA selection | Included where supported |
+| Stage-1 / Stage-2 upload | Included where supported |
+| EMI receive / send workflow | Device dependent |
+| Connection status and operation log output | Included where supported |
 
-## Security / Research Paths
+## Flash and Partition Operations
 
-* SLA / DAA handling paths where supported.
-* Kamakiri workflow paths.
-* HeapBait workflow paths.
-* Carbonara workflow paths.
-* New SLA key handling for selected Motorola, Xiaomi and AOT paths.
-* Infinix DA + exploit paths for selected MT6789, MT6835, MT6855, MT6878, MT6886, MT6893, MT6895, MT6896, MT6897, MT6983, MT6985, MT6989 and MT6993 targets.
+| Feature | Status |
+| --- | --- |
+| Scatter firmware workflow | Included where supported |
+| XML firmware workflow | Included where supported |
+| Native XFLASH / XML flash | Included where supported |
+| Download, firmware upgrade and download-only XML paths | Included where supported |
+| Raw partition read / write | Included where supported |
+| Raw firmware flash | Included where supported |
+| Sparse image handling | Included where supported |
+| GPT read, flash and rebuild | Included where supported |
+| Partition dump / backup | Included where supported |
+| Partition erase | Included where supported |
+| Full flash backup | Device dependent |
+| Preloader read / write | Included where supported |
+| Safe format | Device dependent |
+| Manual format | Device dependent |
+| FRP erase | Device dependent |
+| Bootloader unlock / relock | Device dependent |
+| Permanent unlock development paths | Device dependent |
+| Read / orange state fix | Device dependent |
+
+## File-System and Android Data
+
+| Feature | Status |
+| --- | --- |
+| EXT4 partition detection | Included where supported |
+| EXT4 browse and extraction | Included where supported |
+| Native C# EXT4 stream reader / writer paths | Included where supported |
+| EXT4 file replace / delete / add | Package dependent |
+| Logical partition / super parsing | Included where supported |
+| Dynamic partition browsing | Included where supported |
+| EROFS detection and read paths | Included where supported |
+| F2FS detection and read paths | Included where supported |
+| Android `build.prop` extraction | Included where supported |
+| File and directory extraction | Included where supported |
+| Raw image source handling | Included where supported |
+
+## NV, IMEI, RPMB and Keys
+
+| Feature | Status |
+| --- | --- |
+| NV backup | Included where supported |
+| NV write | Device dependent |
+| NV erase | Device dependent |
+| NV item decode logic | Package dependent |
+| NV item decryption | Package dependent |
+| Read IMEI info from `nvdata` / `ld0b` | Device dependent |
+| IMEI read / repair source areas | Brand and mode dependent |
+| FlashMode IMEI repair | Brand and mode dependent |
+| Vivo / Xiaomi / OPPO IMEI repair paths | Brand and mode dependent |
+| Infinix / Tecno / Itel IMEI repair paths | Brand and mode dependent |
+| Samsung MT67xx IMEI-related key paths | Brand and mode dependent |
+| Hardware key read paths | Device dependent |
+| DXCC helper integration | Device dependent |
+| SEJ / GCPU helper integration | Device dependent |
+| AES helper paths | Included where supported |
+| RPMB read | Device dependent |
+| RPMB write | Device dependent |
+| RPMB erase | Device dependent |
+| RPMB key read | Device dependent |
+
+## Security and Research-Oriented Paths
+
+| Feature | Status |
+| --- | --- |
+| SLA / DAA handling | Device dependent |
+| Brand and model SLA key handling | Device dependent |
+| Kamakiri workflow | Device dependent |
+| HeapBait workflow | Device dependent |
+| Carbonara workflow | Device dependent |
+| Infinix DA + exploit paths for selected MT6789, MT6835, MT6855, MT6878, MT6886, MT6893, MT6895, MT6896, MT6897, MT6983, MT6985, MT6989 and MT6993 targets | Device dependent |
+| FRP / format workflow code paths | Device dependent |
+| Vbmeta / dm-verity patch paths | Device dependent |
+| Brand-specific patch examples | Package dependent |
+
+## Patch and Advanced Service Workflows
+
+All workflows are intended for lawful development, authorized device maintenance, internal service tooling and research by qualified teams.
+
+| Feature | Notes |
+| --- | --- |
+| Patch cert | Selected OPPO / Xiaomi workflows where supported. |
+| Disable Mi Account | System, APK and hosts based paths where supported. |
+| Mi Account + Global | Selected `cust` / `opcust` paths where supported. |
+| Mi Account Remove + Convert Global V2 | Device and firmware dependent. |
+| Reset Huawei ID | Device and firmware dependent. |
+| Reset OPPO ID | Device and firmware dependent. |
+| Remove security plugin | Device and firmware dependent. |
+| OTA Remove | Selected OPPO / Realme / OnePlus workflows where supported. |
+| Xiaomi OTA Remove | Device and firmware dependent. |
+| MDM + OTA Remove | Device and firmware dependent. |
+| MDM Remove | Device and firmware dependent. |
+| Walton MDM / Walock Remove | Selected Walton workflows where supported. |
+| Nothing / CMF SIM Lock / MDM Remove | Selected Nothing / CMF workflows where supported. |
+| Payjoy Remove | Device and firmware dependent. |
+| Payjoy Remove through `oeminfo` | Selected paths where supported. |
+| IT Admin / Network / Payjoy Unlock | Device and firmware dependent. |
+| Modem Patch | Xiaomi anti-relock paths where supported. |
+| Persist Patch | Device and firmware dependent. |
+| Demo Remove | Device and firmware dependent. |
+| Restore Vbmeta | Security ON paths where supported. |
+| Vbmeta Patch V1 / V2 / V3 | Security OFF paths where supported. |
+| Fix no efuse state | Device and firmware dependent. |
+| Fix DM corrupted | Device and firmware dependent. |
+| Fix read / orange state | Device dependent after bootloader unlock. |
+
+## Example Brand Workflow Areas
+
+| Brand / Area | Notes |
+| --- | --- |
+| Samsung MTK | Selected service, NV, partition and authorization paths depending on model and package scope. |
+| Motorola MTK | MTKV5 and MTKV6 workflow examples for supported chipsets and models. |
+| Infinix MTK | MTKV5 and MTKV6 workflow examples where supported. |
+| Honor / Vivo | Selected modern MTK workflow examples where supported. |
+| Xiaomi / Redmi | Selected flash, partition, file-system and information read paths where supported. |
+| OPPO / Realme / OnePlus | Selected patch, OTA, account and service workflows where supported. |
+| Tecno / Itel | Selected IMEI, service and partition workflows where supported. |
+| Huawei | Selected account and partition workflows where supported. |
+| TCL / Alcatel | Selected model-specific support paths where included. |
+| Walton | Selected MDM / Walock workflows where supported. |
+| Nothing / CMF | Selected SIM Lock / MDM workflows where supported. |
+
+## Storage Targets
+
+| Storage | Notes |
+| --- | --- |
+| EMMC | Supported where protocol and DA allow it. |
+| UFS | Supported where protocol and DA allow it. |
+| NAND | Supported where protocol and DA allow it. |
+| NOR / SDMMC | Supported in selected paths where available. |

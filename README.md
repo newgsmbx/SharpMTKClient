@@ -12,11 +12,9 @@
 
 ## Documentation
 
-* [Features](docs/FEATURES.md)
-* [Advanced Service Features](docs/ADVANCED_SERVICE_FEATURES.md)
+* [Features and Service Matrix](docs/FEATURES.md)
 * [Update History](docs/UPDATE_HISTORY.md)
 * [Media Gallery](docs/MEDIA.md)
-* [Feature Matrix](docs/FEATURE_MATRIX.md)
 * [Architecture](docs/ARCHITECTURE.md)
 * [Module Catalog](docs/MODULE_CATALOG.md)
 * [Buyer Guide](docs/BUYER_GUIDE.md)
