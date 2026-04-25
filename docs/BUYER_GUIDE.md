@@ -24,9 +24,12 @@ The licensed package may include, depending on the agreement:
 
 * C# / .NET source code.
 * Windows desktop project files.
+* WinForms UI source areas and workflow screens.
 * Protocol modules for supported MTK workflows.
+* BROM, Preloader, DA and storage workflow implementation areas.
 * Flash, partition and file-system related source areas.
 * NV, IMEI, RPMB and key-related development paths where included.
+* Brand or model workflow examples included in the purchased package scope.
 * Documentation and compile guidance.
 * Minor updates and bug fixes during the support period.
 
@@ -40,12 +43,33 @@ Before purchasing, clarify:
 * Whether private customization is required.
 * Whether compiled redistribution is required.
 * Support period and update expectations.
+* Whether you need private branding, licensing logic or server-side integration.
+* Whether you need custom development beyond the base package.
 
 ## Device Support
 
 MTK support is always dependent on chipset, boot mode, selected DA, security state, firmware package and target operation.
 
 No source package can guarantee every operation on every device. Confirm critical target models before purchase if your workflow depends on specific brands or chipsets.
+
+## Recommended Buyer Checklist
+
+Before finalizing the package, prepare:
+
+* A list of target brands and models.
+* Required operations for each model.
+* Example firmware packages if XML or scatter workflows are required.
+* Required storage types such as EMMC, UFS or NAND.
+* Required file-system workflows such as EXT4, EROFS, F2FS or `super` partition handling.
+* Required NV, IMEI, RPMB or hardware key workflows.
+* Expected UI language, branding and licensing model.
+* Expected delivery and support requirements.
+
+## Integration Expectations
+
+SharpMTKClient is source code for developers. A buyer should be ready to compile, debug and customize a C# Windows project.
+
+If you need a fully branded commercial executable, private licensing server, updater, installer, activation panel or model-specific workflow, clarify this before purchase because it may require custom development outside the base source package.
 
 ## Licensing
 

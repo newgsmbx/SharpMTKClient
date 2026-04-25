@@ -16,13 +16,19 @@ The public repository is a product showcase only. The full source code package i
 
 * SharpMTKClient
 * C# MTK client
+* C# MediaTek source code
 * MediaTek protocol
 * MTK flash tool source code
+* MTK protocol development
 * MTK V5
 * MTK V6
 * XFLASH
 * XML firmware
 * Download Agent
+* BROM
+* Preloader
+* Scatter firmware
+* Android partition tools
 * Windows MTK software
 
 ## Main Feature Areas
@@ -36,6 +42,29 @@ The public repository is a product showcase only. The full source code package i
 * NV, IMEI, RPMB and hardware key related modules.
 * SLA / DAA, Kamakiri, HeapBait and Carbonara related development paths where supported.
 * Windows C# desktop application architecture.
+* Private branding, UI customization and commercial workflow control.
+
+## Suggested Repository Description
+
+Professional C# source code project for MediaTek MTK protocol development on Windows.
+
+## Suggested About Text
+
+Developer-focused C# / .NET source code package for building private Windows MTK service software, including BROM, Preloader, DA, flash, partition, file-system, NV, RPMB and research-oriented workflow areas.
+
+## Suggested Topics
+
+* csharp
+* mtk
+* mediatek
+* protocol
+* mtkclient
+* sharpmtk
+* mtkv6
+* mtkv5
+* xflash
+* download-agent
+* windows
 
 ## Public Links
 

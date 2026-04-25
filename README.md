@@ -35,11 +35,23 @@ If your goal is to own and develop your own MTK software instead of depending on
 ## Documentation
 
 * [Feature Matrix](docs/FEATURE_MATRIX.md)
+* [Architecture](docs/ARCHITECTURE.md)
+* [Module Catalog](docs/MODULE_CATALOG.md)
 * [Buyer Guide](docs/BUYER_GUIDE.md)
 * [Compile and Debug Guide](docs/COMPILE_AND_DEBUG_GUIDE.md)
 * [Support Policy](docs/SUPPORT_POLICY.md)
 * [Media Kit](docs/MEDIA_KIT.md)
+* [FAQ](docs/FAQ.md)
+* [Changelog](docs/CHANGELOG.md)
 * [Links](docs/LINKS.md)
+
+## Public Repository Status
+
+The previous public skeleton project has been removed from this repository.
+
+This repository now contains only public-facing product documentation for SharpMTKClient. It is intended to explain the commercial source-code package, supported workflow areas, licensing position, buyer expectations and contact channels.
+
+No private protocol code, loaders, payloads, authorization material, customer files or commercial implementation files are included in this public repository.
 
 ## Core Protocol Families
 
@@ -58,6 +70,7 @@ Protocol availability depends on chipset, selected DA, boot mode, security state
 ### Device Connection and Initialization
 
 * MediaTek port detection by VID / PID and USB plug / unplug events.
+* Auto-detection of supported MTK boot ports without busy waiting loops.
 * BROM and Preloader communication workflow.
 * Handshake and device information reading.
 * Hardware code, hardware sub-code, hardware version, software version and security flag parsing.
@@ -68,6 +81,7 @@ Protocol availability depends on chipset, selected DA, boot mode, security state
 * EMI receiving and sending workflow.
 * Storage information detection for EMMC, UFS, NAND, NOR and SDMMC paths where supported.
 * Windows native USB communication paths based on Windows APIs, with optional libusb usage for selected authorization paths.
+* Logging hooks for connection state, timing, operation status and device capability reporting.
 
 ### Download Agent and Stage Flow
 
@@ -78,6 +92,7 @@ Protocol availability depends on chipset, selected DA, boot mode, security state
 * Runtime configuration of flash type, page size, flash size and read size.
 * Stage authentication related development paths where supported.
 * Error handling around DA boot, reconnection and protocol mode changes.
+* Connection migration handling when a target switches from BROM to DA or protocol-specific mode.
 
 ### Firmware and Flash Operations
 
@@ -89,8 +104,10 @@ Protocol availability depends on chipset, selected DA, boot mode, security state
 * Raw and sparse image handling from device or file.
 * Preloader read and write operations.
 * GPT read, flash and rebuild paths.
+* Flash GPT and partition table repair workflows where supported.
 * Download-only and firmware-upgrade style flows depending on protocol support.
 * Progress reporting and logging integration.
+* FlashToolLib-style integration paths where included by package scope.
 
 ### Partition and Storage Management
 
@@ -105,6 +122,7 @@ Protocol availability depends on chipset, selected DA, boot mode, security state
 * Safe format and manual format workflows.
 * FRP erase workflows.
 * Support paths for EMMC, UFS and NAND targets where available.
+* Partition size, sector, region and storage target helpers for protocol operations.
 
 ### File Management and File-System Access
 
@@ -117,6 +135,7 @@ Protocol availability depends on chipset, selected DA, boot mode, security state
 * F2FS detection and read paths where implemented.
 * Android `build.prop` extraction logic from supported partitions.
 * File and directory extraction flows.
+* File Management UI paths for browsing supported partitions in a Windows desktop workflow.
 
 ### NV, IMEI and Key-Related Modules
 
@@ -127,6 +146,7 @@ Protocol availability depends on chipset, selected DA, boot mode, security state
 * Hardware key read paths where supported.
 * DXCC / crypto-related integration points where available.
 * AES and device crypto helper modules used by selected workflows.
+* Brand or storage-specific NV workflow examples where included in the licensed package.
 
 ### RPMB Development Paths
 
@@ -148,6 +168,18 @@ Protocol availability depends on chipset, selected DA, boot mode, security state
 * FRP and format workflow code paths.
 * Vbmeta / dm-verity patch logic where supported.
 * Brand or model-specific patch workflow examples.
+
+### Vendor and Model Workflow Examples
+
+Package scope may include workflow examples or support paths for selected devices and brands such as:
+
+* Samsung MTK service workflows for supported modern models.
+* Motorola MTKV5 and MTKV6 workflows for supported targets.
+* Infinix MTKV5 and MTKV6 workflows.
+* Honor, Vivo, Redmi and TCL examples where supported.
+* Model-specific authorization, DA selection, partition, NV, RPMB or patch workflows depending on agreement scope.
+
+Support for a brand or model depends on chipset, firmware, boot mode, security state, DA compatibility and target operation.
 
 ## Developer Value
 
@@ -175,6 +207,19 @@ Developers can use it to build:
 * File Management UI integration.
 * Configurable UI and workflow logic.
 * Suitable for private branding and commercial customization.
+
+## Commercial Package Scope
+
+The licensed source package is intended to provide a practical development foundation, not only a feature list. Depending on the agreement, the package can include:
+
+* Core C# project structure and Windows desktop UI.
+* Protocol modules for selected MTK boot and flash workflows.
+* Download Agent parser and stage flow implementation.
+* Partition, storage and firmware operation modules.
+* File-system access modules for selected Android partition formats.
+* NV, IMEI, RPMB, crypto and key-related development areas.
+* Brand-specific and research-oriented workflow examples where included.
+* Documentation, compile guidance and support during the active support period.
 
 ## Repository Notice
 
